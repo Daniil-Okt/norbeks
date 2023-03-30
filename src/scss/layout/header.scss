@@ -1,11 +1,14 @@
 // =====================================================================================================================
 .header {
   width: 100%;
-  position: fixed;
+  position: sticky;
   background-color: $whiteColor;
   border-bottom: 2px solid #1B1B1B;
 
   z-index: 5;
+  @media(max-width:1080px){
+    border-bottom: none;
+  }
   @media(max-width:720px){
       padding-top: rem(10);
   }
@@ -16,7 +19,7 @@
   // .header__container
   &__container {
     position: relative;
-    height: rem($headerHeight);
+    @include adaptiveClamp(height, 100, 60);
     display: flex;
     align-items: center;
     @media(max-width:1080px){

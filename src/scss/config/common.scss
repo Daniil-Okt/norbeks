@@ -8,3 +8,9 @@ h2 {
     @include adaptiveClamp(font-size, 36, 22);
     @include adaptiveClamp(line-height, 39.6, 28.6);
 }
+// h1 {
+//         font-family: 'Krona One';
+//         @include adaptiveClamp(font-size, 36, 22);
+//         @include adaptiveClamp(line-height, 39.6, 28.6);
+//         text-transform: uppercase;
+// }
