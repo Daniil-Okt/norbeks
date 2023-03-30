@@ -14,3 +14,21 @@ h2 {
 //         @include adaptiveClamp(line-height, 39.6, 28.6);
 //         text-transform: uppercase;
 // }
+.button {
+    background: #471714;
+    border: 2px solid #1B1B1B;
+    color: #FAF7F2;
+    font-size: 20px;
+    line-height: 140%;
+    font-size: rem(20);
+    text-align: center;
+
+    padding: rem(19);
+
+    cursor: pointer;
+
+    @media(max-width:480px){
+        font-size: rem(16);
+        padding: rem(7);
+    }
+}
