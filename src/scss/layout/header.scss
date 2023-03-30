@@ -1,0 +1,231 @@
+// =====================================================================================================================
+.header {
+  width: 100%;
+  position: fixed;
+  background-color: $whiteColor;
+  border-bottom: 2px solid #1B1B1B;
+
+  z-index: 5;
+  @media(max-width:720px){
+      padding-top: rem(10);
+  }
+  @media(max-width:480px){
+      padding-top: 0;
+  }
+
+  // .header__container
+  &__container {
+    position: relative;
+    height: rem($headerHeight);
+    display: flex;
+    align-items: center;
+    @media(max-width:1080px){
+        justify-content: right;
+    }
+  }
+
+  &__logo-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media(max-width:1080px){
+        justify-content: left;
+        padding-left: rem(40);
+    }
+    @media(max-width:720px){
+      padding-left:rem(30);
+    }
+    @media(max-width:480px){
+      padding-left: rem(25);
+    }
+  }
+
+  &__logo {
+  }
+
+  &__menu {
+  }
+}
+.logo {
+  @include adaptiveClamp(max-width, 189, 150);
+  &__img {
+    width: 100%;
+  }
+}
+.menu {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 2;
+
+  @media(max-width:1080px){
+    transition: all 0.5s ease  0s;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+
+    background-color: $grayColor;
+    gap: rem(20);
+    top: 0;
+    right: -100%;
+    .menu-open & {
+      right: 0;
+    }
+    // padding-top: rem(200);
+  }
+
+  &__row {
+    width: 100%;
+    display: flex;
+  }
+  &__row-left {
+    .menu__icon-row {
+      @media(max-width:1080px){
+        display: none;
+    }
+    }
+    @media(max-width:1080px){
+      justify-content: center;
+    }
+  }
+  &__row-right {
+    justify-content: end;
+    @media(max-width:1080px){
+      align-items: center;
+      flex-direction: column;
+    }
+  }
+  &__list {
+    display: flex;
+    align-items: center;
+
+    gap: rem(20);
+
+    @media(max-width:1080px){
+      margin-right: 0;
+      flex-direction: column;
+    }
+  }
+
+  &__list-left {
+    margin-left: rem(92);
+    @media(max-width:1280px){
+      margin-left: rem(30);
+    }
+    @media(max-width:1080px){
+      margin-left: 0;
+    }
+  }
+
+  &__list-right {
+    margin-right: rem(74);
+    @media(max-width:1280px){
+      margin-right: rem(28);
+    }
+    @media(max-width:1080px){
+      margin-right: 0;
+    }
+  }
+
+  &__item {
+  }
+
+  &__link {
+    font-weight: 500;
+    text-transform: uppercase;
+
+    @media(max-width:1080px){
+        font-size: rem(30);
+    }
+  }
+
+  &__icon-row {
+    display: flex;
+    justify-content: space-between;
+
+    gap: rem(16);
+
+    @media(max-width:1080px){
+        margin-top: rem(20);
+    }
+  }
+
+  &__icon {
+  }
+
+  &__icon-message {
+  }
+}
+.menu__icon-open {
+  display: none;
+  @media(max-width:1080px){
+      display: block;
+      &.menu__icon-message {
+        width: 28px;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+  }
+}
+// =====================================================================================================================
+
+// Burger
+
+.icon-menu {
+  display: none;
+  @include media(1080) {
+    display: block;
+    background: none;
+    position: relative;
+    width: rem(44);
+    height: rem(20);
+    cursor: pointer;
+    z-index: 5;
+    @media(max-width:480px){
+      width: rem(29.5);
+      height: rem(16);
+    }
+    span,
+    &::before,
+    &::after {
+      content: "";
+      transition: all 300ms ease 0ms;
+      right: 0;
+      position: absolute;
+      width: 100%;
+      height: rem(2);
+      background-color: $blackColor;
+    }
+    &::before {
+      top: 0;
+    }
+    &::after {
+      bottom: 0;
+    }
+    span {
+      top: calc(50% - rem(1));
+    }
+    .menu-open & {
+      span {
+        width: 0;
+      }
+      &::before {
+        top: calc(50% - rem(1));
+        transform: rotate(-45deg);
+      }
+      &::after {
+        bottom: calc(50% - rem(1));
+        transform: rotate(45deg);
+      }
+    }
+  }
+}
