@@ -40,8 +40,7 @@
             max-width: 100%;
             margin-left: 0px;
             img {
-                max-width: 320px;
-                flex: 0 1 50%;
+                min-width: 320px;
             }
         }
         @media(max-width: 640px){
