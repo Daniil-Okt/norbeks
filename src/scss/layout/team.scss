@@ -1,6 +1,5 @@
 .team {
     @include adaptiveClamp(margin-top, 100, 50);
-    margin-bottom: 4000px;
     &__row {
         display: flex;
         @media(max-width:720px){
