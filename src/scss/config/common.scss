@@ -36,3 +36,50 @@ h2 {
         padding: rem(7);
     }
 }
+input[type='radio'] {
+    position: relative;
+    height: 30px;
+    width: 30px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    @media(max-width:520px){
+        height: 16.3px;
+        width: 16.3px;
+    }
+  }
+  
+  input[type='radio']::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $whiteColor;
+    border: 2px solid $blackColor;
+    @media(max-width:520px){
+        height: 16.3px;
+        width: 16.3px;
+    }
+  }
+  
+  input[type='radio']:checked::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: $blackColor;
+    transform: translate(-50%, -50%);
+    visibility: visible;
+    @media(max-width:520px){
+        height: 8px;
+        width: 8px;
+    }
+  }

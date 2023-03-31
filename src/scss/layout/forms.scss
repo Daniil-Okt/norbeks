@@ -5,22 +5,26 @@
 
     &__row {
         display: flex;
-        @media(max-width:840px){
+        @media(max-width:864px){
             flex-direction: column;
         }
     }
 
     &__body {
         flex: 0 1 48%;
-        margin-right: 135px;
+        margin-right: rem(135);
+        @media(max-width:1280px){
+            margin-right: rem(100);
+        }
         @media(max-width:1254px){
             margin-right: rem(20);
         }
-        @media(max-width:1125px){
+    
+        @media(max-width:1160px){
             
             flex: 0 1 37%;
         }
-        @media(max-width:840px){
+        @media(max-width:864px){
             flex: 0 1 100%;
             margin-right: 0;
         }
@@ -48,10 +52,10 @@
 
     &__form {
         flex: 0 1 52%;
-        @media(max-width:1125px){
+        @media(max-width:1160px){
             flex: 0 1 63%;
         }
-        @media(max-width:840px){
+        @media(max-width:864px){
             flex: 0 1 100%;
         }
     }
@@ -103,14 +107,14 @@
         margin-right: rem(20);
         p {
             font-size: rem(20);
-            @media(max-width:480px){
+            @media(max-width:520px){
                 font-size: rem(12);
             }
         }
         @media(max-width:520px){
             flex-direction: column;
             align-items: start;
-            gap: rem(10);
+            gap: rem(5);
         }
     }
     &__radio-item {
@@ -125,8 +129,8 @@
         width: 30px;
         height: 30px;
         margin: 0;
-        background:$whiteColor;
-        border: 1.08696px solid #1B1B1B;
+        // background:$whiteColor;
+        border: none;
         @media(max-width:520px){
             width: 16.3px;
             height: 16.3px;
