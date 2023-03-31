@@ -4,7 +4,7 @@ body {
     touch-action: none;
   }
   background-color: $whiteColor;
-
+  scroll-behavior: smooth;
 }
 // Базовые анимации:
 // @import "keyframes";
