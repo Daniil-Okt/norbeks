@@ -125,10 +125,13 @@
         width: 30px;
         height: 30px;
         margin: 0;
+        background:$whiteColor;
+        border: 1.08696px solid #1B1B1B;
         @media(max-width:520px){
             width: 16.3px;
             height: 16.3px;
         }
+        cursor: pointer;
     }
     &__button {
         @include adaptiveClamp(min-width, 196, 150);
